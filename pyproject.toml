@@ -1,0 +1,61 @@
+[project]
+name = "auspost-blade-mcp"
+version = "0.1.0"
+description = "Australia Post MCP server — postage calculator, shipping, tracking, and locations via official AusPost APIs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+authors = [{ name = "Piers" }]
+keywords = ["australia-post", "auspost", "shipping", "tracking", "mcp", "sidereal"]
+
+dependencies = [
+    "fastmcp>=2.0.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.0.0",
+]
+
+[dependency-groups]
+test = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "pytest-cov>=6.0.0",
+    "respx>=0.22.0",
+]
+dev = [
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+    "pre-commit>=3.6.0",
+]
+
+[project.scripts]
+auspost-blade-mcp = "auspost_blade_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/auspost_blade_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "e2e: end-to-end tests requiring live AusPost API credentials",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "S", "B", "A", "C4", "DTZ", "T20", "ICN", "PIE", "PT", "RSE", "RET", "SIM", "TID", "TCH", "ARG", "PTH", "ERA"]
+ignore = ["S101", "S105"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
