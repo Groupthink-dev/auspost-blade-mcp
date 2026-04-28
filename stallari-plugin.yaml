@@ -1,5 +1,5 @@
 name: auspost-blade-mcp
-version: "0.1.1"
+version: "0.2.1"
 description: "Australia Post MCP — postage calculator, shipping, tracking, and locations via official AusPost APIs"
 author: Groupthink-dev
 license: MIT
@@ -7,10 +7,13 @@ tier: certified
 author_type: first-party
 readiness: production
 homepage: https://github.com/Groupthink-dev/auspost-blade-mcp
-contract: postal-v1
+
+# DD-181 Wave 2: postal-v1 → logistics-v1 (DD-157). Conformance reset to
+# untested pending op-by-op mapping against the renamed contract.
+contract: logistics-v1
 
 services:
-  postal:
+  logistics:
     postcode_search: auspost_postcode_search
     domestic_services: auspost_domestic_services
     domestic_calculate: auspost_domestic_calculate
@@ -122,11 +125,12 @@ env:
     secret: true
 
 requires:
-  sidereal: ">=0.3.0"
+  stallari: ">=0.73.4"
 
 conformance:
-  required: "10/10"
-  recommended: "5/5"
-  optional: "2/2"
-  gated: "4/4"
-  last_tested: "2026-04-07"
+  logistics-v1:
+    required: untested
+    recommended: untested
+    optional: untested
+    gated: untested
+  last_tested: null

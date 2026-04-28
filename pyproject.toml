@@ -1,12 +1,12 @@
 [project]
 name = "auspost-blade-mcp"
-version = "0.2.0"
+version = "0.2.1"
 description = "Australia Post MCP server — postage calculator, shipping, tracking, and locations via official AusPost APIs"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12"
 authors = [{ name = "Piers" }]
-keywords = ["australia-post", "auspost", "shipping", "tracking", "mcp", "sidereal"]
+keywords = ["australia-post", "auspost", "shipping", "tracking", "mcp", "stallari"]
 
 dependencies = [
     "fastmcp>=2.0.0",

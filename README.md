@@ -201,11 +201,14 @@ make run         # start server (stdio)
 - **Labels max 250** — synchronous label generation supports up to 250 parcels per request.
 - **Locations API** — the new Locations API requires partner agreement for bulk export. This MCP uses the PAC postcode search for location data, which returns geocoded suburbs.
 
-## Sidereal Marketplace
+## Stallari Marketplace
 
-This MCP is published as a **certified** provider in the Sidereal Marketplace. See `sidereal-plugin.yaml` for the full manifest including credential configuration, test endpoints, and contract mappings.
+This MCP is published as a **certified** provider in the [Stallari Marketplace](https://stallari.ai). See `stallari-plugin.yaml` for the full manifest including credential configuration, test endpoints, and contract mappings.
 
-Contract: `postal-v1`
+Contract: `logistics-v1` (renamed from `postal-v1` in pack-spec 2.0.0)
+
+- Marketplace listing: https://stallari.ai
+- Stallari platform repo: https://github.com/Groupthink-dev/stallari
 
 ## License
 
